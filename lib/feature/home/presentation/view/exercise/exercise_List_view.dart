@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
-import 'package:new_project/feature/home/model/response/exercise_reponse_model.dart';
+import 'package:flutter/material.dart';
+import 'package:new_project/feature/home/model/response/exercise_model/exercise_model.dart';
 
 class ExerciseList extends StatelessWidget {
-  final List<Exercises> exercises;
+  final List<ExerciseModel> exercises;
 
   const ExerciseList({super.key, required this.exercises});
 
@@ -12,7 +12,7 @@ class ExerciseList extends StatelessWidget {
     // Group exercises by body part
     final groupedExercises = groupBy(
       exercises,
-      (Exercises exercise) => exercise.bodyParts?.join(", ") ?? 'Unknown',
+      (ExerciseModel exercise) => exercise.bodyPart ?? 'Unknown',
     );
 
     return Scaffold(
@@ -22,7 +22,7 @@ class ExerciseList extends StatelessWidget {
       body: ListView(
         children: groupedExercises.entries.map((entry) {
           String bodyPart = entry.key;
-          List<Exercises> exercisesForBodyPart = entry.value;
+          List<ExerciseModel> exercisesForBodyPart = entry.value;
 
           return ExpansionTile(
             title: Text(
@@ -52,7 +52,7 @@ class ExerciseList extends StatelessWidget {
                       style: const TextStyle(fontSize: 16),
                     ),
                     subtitle: Text(
-                      'Target: ${exercise.targetMuscles?.join(", ") ?? "Unknown"}',
+                      'Target: ${exercise.target ?? "Unknown"}',
                       style: const TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                   ),

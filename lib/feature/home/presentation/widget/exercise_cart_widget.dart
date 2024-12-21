@@ -6,7 +6,8 @@ class ExerciseCartWidget extends StatelessWidget {
       {super.key,
       required this.name,
       required this.imageUrl,
-      required this.bodyParts, this.onTap});
+      required this.bodyParts,
+      this.onTap});
   final String name;
   final String imageUrl;
   final String bodyParts;

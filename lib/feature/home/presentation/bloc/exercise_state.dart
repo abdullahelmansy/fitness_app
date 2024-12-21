@@ -1,19 +1,18 @@
 part of 'exercise_bloc.dart';
 
 @immutable
-sealed class ExerciseState {}
+abstract class ExerciseState {}
 
-final class ExerciseInitial extends ExerciseState {}
+class ExerciseInitial extends ExerciseState {}
 
 class ExerciseLoading extends ExerciseState {}
 
 class ExerciseLoaded extends ExerciseState {
-  final ExerciseResponseModel exerciseResponseModel;
-
-  ExerciseLoaded(this.exerciseResponseModel);
+  final List<ExerciseModel> exercises;
+  ExerciseLoaded(this.exercises);
 }
 
-final class ExerciseError extends ExerciseState {
+class ExerciseError extends ExerciseState {
   final String message;
   ExerciseError(this.message);
 }

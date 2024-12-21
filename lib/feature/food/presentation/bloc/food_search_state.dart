@@ -1,28 +1,20 @@
-import 'package:equatable/equatable.dart';
+// bloc/nutrition_state.dart
+import 'package:new_project/feature/food/data/model/food_item_model.dart';
 
-abstract class FoodSearchState extends Equatable {
-  @override
-  List<Object?> get props => [];
+abstract class NutritionState {}
+
+class NutritionInitial extends NutritionState {}
+
+class NutritionLoading extends NutritionState {}
+
+class NutritionLoaded extends NutritionState {
+  final List<NutritionModel> nutritionData;
+
+  NutritionLoaded(this.nutritionData);
 }
 
-class FoodSearchInitial extends FoodSearchState {}
-
-class FoodSearchLoading extends FoodSearchState {}
-
-class FoodSearchLoaded extends FoodSearchState {
-  final List<Map<String, dynamic>> foods;
-
-  FoodSearchLoaded(this.foods);
-
-  @override
-  List<Object?> get props => [foods];
-}
-
-class FoodSearchError extends FoodSearchState {
+class NutritionError extends NutritionState {
   final String message;
 
-  FoodSearchError(this.message);
-
-  @override
-  List<Object?> get props => [message];
+  NutritionError(this.message);
 }

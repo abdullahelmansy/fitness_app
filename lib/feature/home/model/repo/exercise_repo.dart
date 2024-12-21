@@ -1,21 +1,22 @@
 import 'dart:developer';
-
 import 'package:new_project/core/constants/api_constant.dart';
-import 'package:new_project/feature/home/model/response/exercise_reponse_model.dart';
 import 'package:new_project/core/dio/dio_provider.dart';
+import 'package:new_project/feature/home/model/response/exercise_model/exercise_model.dart';
 
 class ExerciseRepo {
-  static Future<ExerciseResponseModel?> getExercises(
-      {int page = 1, int limit = 1324}) async {
+  static Future<List<ExerciseModel>?> getExercises({int page = 1, int limit = 50}) async {
     try {
       var response = await DioProvider.get(
         endpoint: ApiConstant.exerciseEndpoint,
         queryParameters: {'page': page, 'limit': limit},
+        headers: {
+          'x-rapidapi-key': ApiConstant.exerciseApiKey,
+          'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
+        },
       );
       if (response.statusCode == 200) {
-        var model = ExerciseResponseModel.fromJson(response.data);
-        log(model.toString());
-        return model;
+        List<dynamic> data = response.data;
+        return data.map((json) => ExerciseModel.fromJson(json)).toList();
       } else {
         return null;
       }
@@ -25,21 +26,19 @@ class ExerciseRepo {
     }
   }
 
-  static Future<ExerciseResponseModel?> searchExercises(
-      {required String query, int page = 1, int limit = 50}) async {
+  static Future<List<ExerciseModel>?> searchExercises({required String query, int page = 1, int limit = 10}) async {
     try {
       var response = await DioProvider.get(
         endpoint: ApiConstant.exerciseEndpoint,
         queryParameters: {
           'page': page,
           'limit': limit,
-          'query': query
-        }, // assuming the API supports this query parameter
+          'query': query,
+        },
       );
       if (response.statusCode == 200) {
-        var model = ExerciseResponseModel.fromJson(response.data);
-        log(model.toString());
-        return model;
+        List<dynamic> data = response.data;
+        return data.map((json) => ExerciseModel.fromJson(json)).toList();
       } else {
         return null;
       }

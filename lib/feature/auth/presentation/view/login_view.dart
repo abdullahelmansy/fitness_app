@@ -8,7 +8,6 @@ import 'package:new_project/core/utils/text_style.dart';
 import 'package:new_project/core/widgets/nav_bar_widget.dart';
 import 'package:new_project/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:new_project/feature/auth/presentation/view/register_view.dart';
-import 'package:new_project/feature/home/presentation/view/exercise/exercise_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

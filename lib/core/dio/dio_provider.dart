@@ -3,11 +3,14 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:new_project/core/constants/api_constant.dart';
 
-
 class DioProvider {
   static late Dio dio;
   static init() {
-    dio = Dio(BaseOptions(baseUrl: ApiConstant.baseUrl,),);
+    dio = Dio(
+      BaseOptions(
+        baseUrl: ApiConstant.baseUrl,
+      ),
+    );
   }
 
   static Future<Response> post({
@@ -33,7 +36,6 @@ class DioProvider {
       rethrow; // Re-throw the error if needed
     }
   }
-
 
   static Future<Response> get({
     required String endpoint,

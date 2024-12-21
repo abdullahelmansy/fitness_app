@@ -115,7 +115,8 @@ class _UserInfoViewState extends State<UserInfoView> {
                 borderRadius: BorderRadius.circular(20),
                 value: selectedGender,
                 hint: const Text("Select your goal"),
-                items: ["Muscle Gain", "Keep Fit", "Weight Loss", "Other"].map((String gender) {
+                items: ["Muscle Gain", "Keep Fit", "Weight Loss", "Other"]
+                    .map((String gender) {
                   return DropdownMenuItem<String>(
                     value: gender,
                     child: Text(gender),

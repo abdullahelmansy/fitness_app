@@ -38,8 +38,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   login(LoginEvent event, Emitter emit) async {
     emit(LoginLoadingState());
     try {
-      final credential =
-          await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: event.email,
         password: event.password,
       );

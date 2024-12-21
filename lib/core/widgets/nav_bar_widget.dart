@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_project/feature/bmi/presentation/view/bmi_view.dart';
-import 'package:new_project/feature/food/presentation/view/food_search_view.dart';
+import 'package:new_project/feature/food/presentation/screen/nutrition_home_page.dart';
 import 'package:new_project/feature/home/presentation/view/exercise/exercise_view.dart';
 
 import '../utils/colors.dart';
@@ -16,9 +16,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   int currentIndex = 0;
   List<Widget> views = [
     const ExerciseView(),
-     FoodSearchView(),
- BMIScreen() ,
- 
+    const NutritionHomePage(),
+    BMIScreen(),
   ];
 
   @override
@@ -38,7 +37,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
           backgroundColor: AppColors.whiteColor,
           elevation: 0,
           items: const [
-           BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.list),
               label: '',
               // activeIcon: SvgPicture.asset(
@@ -47,7 +46,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               //       AppColors.primaryColor, BlendMode.srcIn),
               // ),
             ),
-           BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.food_bank_rounded),
               label: '',
               // activeIcon: SvgPicture.asset(
@@ -65,8 +64,6 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               //       AppColors.primaryColor, BlendMode.srcIn),
               // ),
             ),
-           
-           
           ]),
     );
   }

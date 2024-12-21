@@ -1,15 +1,8 @@
-import 'package:equatable/equatable.dart';
+// bloc/nutrition_event.dart
+abstract class NutritionEvent {}
 
-abstract class FoodSearchEvent extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
-
-class SearchFoodEvent extends FoodSearchEvent {
+class FetchNutritionData extends NutritionEvent {
   final String query;
 
-  SearchFoodEvent(this.query);
-
-  @override
-  List<Object?> get props => [query];
+  FetchNutritionData(this.query);
 }

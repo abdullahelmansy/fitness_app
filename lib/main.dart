@@ -1,11 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_project/core/utils/themes.dart';
 import 'package:new_project/core/dio/dio_provider.dart';
-import 'package:new_project/core/widgets/nav_bar_widget.dart';
 import 'package:new_project/feature/auth/presentation/bloc/auth_bloc.dart';
 import 'package:new_project/feature/food/presentation/bloc/food_search_bloc.dart';
+import 'package:new_project/feature/food/presentation/screen/nutrition_home_page.dart';
 import 'package:new_project/feature/home/presentation/bloc/exercise_bloc.dart';
 import 'package:new_project/feature/intro/splash_view.dart';
 import 'package:new_project/firebase_options.dart';
@@ -32,9 +31,11 @@ class MyApp extends StatelessWidget {
           create: (context) => ExerciseBloc(),
         ),
         BlocProvider(
-          create: (context) => FoodSearchBloc(Dio()),
+          create: (context) => NutritionBloc(),
         ),
-        BlocProvider(create:(context) => AuthBloc(),)
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        )
       ],
       child: MaterialApp(
           title: 'Flutter Demo',
