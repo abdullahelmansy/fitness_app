@@ -38,7 +38,7 @@ class ExerciseView extends StatelessWidget {
                           onPressed: () {
                             push(context, ExerciseList(exercises: exercises));
                           },
-                          icon: const Icon(Icons.search_sharp))
+                          icon: const Icon(Icons.menu))
                     ],
                   ),
                   body: Column(

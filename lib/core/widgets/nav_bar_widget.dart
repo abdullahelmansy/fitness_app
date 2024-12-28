@@ -36,17 +36,20 @@ class _NavBarWidgetState extends State<NavBarWidget> {
           type: BottomNavigationBarType.fixed,
           backgroundColor: AppColors.whiteColor,
           elevation: 0,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.list),
+              icon: Image.asset(
+                'assets/exercise.png',
+                width: 25,
+              ),
               label: '',
-              // activeIcon: SvgPicture.asset(
-              //   'assets/icons/Home.svg',
-              //   colorFilter:  ColorFilter.mode(
-              //       AppColors.primaryColor, BlendMode.srcIn),
-              // ),
+              activeIcon: Image.asset(
+                'assets/exercise.png',
+                width: 30,
+                color: AppColors.primaryColor,
+              ),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.food_bank_rounded),
               label: '',
               // activeIcon: SvgPicture.asset(
@@ -55,7 +58,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               //       AppColors.primaryColor, BlendMode.srcIn),
               // ),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.calculate_outlined),
               label: '',
               // activeIcon: SvgPicture.asset(

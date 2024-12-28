@@ -17,7 +17,7 @@ class NutritionBloc extends Bloc<NutritionEvent, NutritionState> {
         );
         emit(NutritionLoaded(data));
       } catch (e) {
-        emit(NutritionError('Failed to fetch data: $e'));
+        emit(NutritionError('Enter a valid food item'));
       }
     });
   }

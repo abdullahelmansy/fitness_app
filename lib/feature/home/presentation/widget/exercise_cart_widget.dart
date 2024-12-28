@@ -45,7 +45,7 @@ class ExerciseCartWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    bodyParts,
+                    "Body of Part : $bodyParts",
                     style: getSmallTextStyle(context),
                   ),
                 ],

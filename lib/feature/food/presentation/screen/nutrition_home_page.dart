@@ -68,7 +68,7 @@ class _NutritionHomePageState extends State<NutritionHomePage> {
                       },
                     );
                   } else if (state is NutritionError) {
-                    return Center(child: Text(state.message));
+                    return const Center(child: Text('Enter a valid food item'));
                   }
                   return const Text(
                       'Enter a food item to see its nutrition info.');
