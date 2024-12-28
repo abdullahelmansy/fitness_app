@@ -21,11 +21,14 @@ Flutter SDK installed.
 A valid API key for the fitness and nutrition APIs used (e.g., ExerciseDB API and Nutritionix API).
 ## Installation
 1- Clone the repository:
+https://github.com/abdullahelmansy/fitness_app.git
 
 2-Navigate to the project directory:
 cd fitness-app
+
 3- Install dependencies:
 flutter pub get
+
 4- Rub the app:
 flutter run
 
